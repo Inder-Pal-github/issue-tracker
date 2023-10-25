@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
 import prisma from "@/prisma/client";
-
-// data which need to be validated is title and description as other fields are default
-const createIssueSchema = z.object({
-  title: z.string().min(1,"Title is required.").max(255),
-  description: z.string().min(1,"Description is required."),
-});
+import { createIssueSchema } from "../../createIssueSchema";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();

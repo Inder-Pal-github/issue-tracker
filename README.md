@@ -65,3 +65,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - import
         - import SimpleMDE from "react-simplemde-editor";
         - import "easymde/dist/easymde.min.css";
+- @hookform/resolvers
+    - this package help integration with data validation libraries like zob.
