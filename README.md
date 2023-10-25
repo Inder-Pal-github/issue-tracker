@@ -49,3 +49,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - installed zod for body data validation
 - npm i zod
+- https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices
+
+- radix-ui.com
+    - themes to use from this
+    - installation
+    - npm i @radix-ui/themes
+    - import the stylesheet at top of application in layout file
+    - import '@radix-ui/themes/styles.css'
+    - import Theme component and use it in layout.ts
