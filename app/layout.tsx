@@ -23,7 +23,7 @@ export default function RootLayout({
         <Theme>
           <Navbar />
           {/* Adding navbar in layout as it will be global */}
-          <main>{children}</main>
+          <main className="p-5">{children}</main>
         </Theme>
       </body>
     </html>
