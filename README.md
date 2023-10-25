@@ -36,3 +36,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### classnames :
     - this package is used to optimize the render of classes based on conditions.
+
+#### Prisma
+- npm i prisma@5.3.1
+- npx prisma init
+    - creates schema.prisma file
