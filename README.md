@@ -58,3 +58,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - import the stylesheet at top of application in layout file
     - import '@radix-ui/themes/styles.css'
     - import Theme component and use it in layout.ts
+
+- Add markdown editor
+    - Install
+        - npm install --save react-simplemde-editor easymde
+    - import
+        - import SimpleMDE from "react-simplemde-editor";
+        - import "easymde/dist/easymde.min.css";
