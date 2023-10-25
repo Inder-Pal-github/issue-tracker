@@ -46,4 +46,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - migrate
     - npx prisma migrate dev
         - create migration file with timestamp which have instrutions to create table in db and other things. if successfully created => we can check the db with newly created tables
-    
+
+- installed zod for body data validation
+- npm i zod
