@@ -1,8 +1,14 @@
+'use client'
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { AiFillBug } from "react-icons/ai";
+import classnames from "classnames";
 
 const Navbar = () => {
+
+  const currentPath = usePathname(); // this hook access browser api's so convert this to client side using 'use client'
+  console.log(currentPath);
   const links = [
     { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/issues" },
@@ -17,7 +23,12 @@ const Navbar = () => {
         {links?.map((link,i) => (
           <li key={i}>
             <Link
-              className="text-zinc-500 hover:text-zinc-800 transition-colors"
+            // change the color of label according to the page which is now shown.
+              className={classnames({
+                'text-zinc-900' : link.href===currentPath, // only render this class if the link is active.,
+                'text-zinc-500':link.href !== currentPath,
+                'text-zinc-500 hover:text-zinc-800 transition-colors':true, // render each time.
+              })}
               href={link.href}
             >
               {link.label}
