@@ -41,3 +41,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - npm i prisma@5.3.1
 - npx prisma init
     - creates schema.prisma file
+- pass db url  in env file
+- define schemas
+- migrate
+    - npx prisma migrate dev
+        - create migration file with timestamp which have instrutions to create table in db and other things. if successfully created => we can check the db with newly created tables
+    
