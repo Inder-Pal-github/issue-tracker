@@ -10,6 +10,7 @@ import {
   Popover,
   TextArea,
 } from "@radix-ui/themes";
+import useDarkMode from "../customHooks/useDarkMode";
 
 const Issue = ({
   title,
@@ -19,10 +20,13 @@ const Issue = ({
   updatedAt,
 }: I_Issue) => {
   const [comment, setComment] = useState("");
+  const [colorTheme, setTheme] = useDarkMode();
   return (
     <div className="border-blue-300 border-2 rounded-md flex flex-col justify-evenly items-stretch p-4 max-w-lg w-full max-h-80 h-60 m-4">
       <div className="flex justify-between">
-        <Heading as="h4">{title}</Heading>
+        <Heading className="dark:text-zinc-300" as="h4">
+          {title}
+        </Heading>
         <Badge
           color={
             status === "OPEN"
@@ -32,7 +36,7 @@ const Issue = ({
               : "orange"
           }
           radius="medium"
-          variant="soft"
+          variant={colorTheme === "dark" ? "outline" : "soft"}
         >
           {status}
         </Badge>
@@ -45,11 +49,11 @@ const Issue = ({
           </Popover.Trigger>
           <Popover.Content style={{ width: 360 }}>
             <Flex direction="column" gap="3">
-                <TextArea
-                  placeholder="Write a comment..."
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                ></TextArea>
+              <TextArea
+                placeholder="Write a comment..."
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              ></TextArea>
               <Popover.Close>
                 <Button size="1">Comment</Button>
               </Popover.Close>
